@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Enable duplicate-and-comment': 'duplicate-and-comment:duplicateAndComment'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'duplicate-and-comment'
+      'submenu': [
+        { 'label': 'duplicate-and-comment', 'command': 'duplicate-and-comment:duplicateAndComment' }
+      ]
+    ]
+  }
+]
