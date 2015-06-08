@@ -7,5 +7,8 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
-'.editor':
+#'.editor':
+#  'ctrl-alt-m': 'duplicate-and-comment:duplicateAndComment'
+'atom-text-editor': [{
   'ctrl-alt-m': 'duplicate-and-comment:duplicateAndComment'
+}]
