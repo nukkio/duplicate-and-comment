@@ -9,7 +9,7 @@
   "repository": "https://github.com/nukkio/duplicate-and-comment",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">=0.185.0 <2.0.0"
   },
   "dependencies": {},
   "readme": "# duplicate-and-comment\nDuplicate the selected lines and comment the original\n",
