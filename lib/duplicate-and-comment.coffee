@@ -1,16 +1,24 @@
+{CompositeDisposable} = require 'atom'
+
 module.exports =
+  subscriptions: null
+
   activate: ->
-    atom.workspaceView.command 'duplicate-and-comment:duplicateAndComment', => @duplicateAndComment()
+    @subscriptions = new CompositeDisposable
+    @subscriptions.add atom.commands.add 'atom-workspace',
+      'duplicate-and-comment:duplicateAndComment': => @duplicateAndComment()
+
+  deactivate: ->
+    @subscriptions.dispose()
 
   duplicateAndComment: ->
-    @editor = atom.workspace.getActiveEditor()
-    if (@editor)
-        @buff = atom.workspace.getActiveEditor().getSelection().getBufferRange()
-        @line0=@buff.start.row
-        @line1=@buff.end.row
-        @mov=@line1-@line0
-        atom.workspace.getActiveEditor().getSelection().setBufferRange([[@line0, 1],[@line1, 1]])
+    if editor = atom.workspace.getActiveTextEditor()
+        @editor=atom.workspace.getActiveTextEditor()
+        @editor.selectLinesContainingCursors()
         @editor.duplicateLines()
-        atom.workspace.getActiveEditor().getSelection().setBufferRange([[@line0, 1],[@line1, 1]])
         @editor.toggleLineCommentsInSelection()
-        @editor.moveCursorDown(@mov)
+        @editor.moveLineUp()
+        @cur=@editor.cursors[0]
+        @cur.moveDown()
+        @cur.moveLeft()
+
