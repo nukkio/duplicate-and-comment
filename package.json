@@ -1,10 +1,12 @@
 {
   "name": "duplicate-and-comment",
   "main": "./lib/duplicate-and-comment",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Duplicate the selected lines and comment the original",
   "activationCommands": {
-    "atom-text-editor": ["duplicate-and-comment:duplicateAndComment"]
+    "atom-text-editor": [
+      "duplicate-and-comment:duplicateAndComment"
+    ]
   },
   "repository": "https://github.com/nukkio/duplicate-and-comment",
   "license": "MIT",
