@@ -8,6 +8,5 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
 
-'atom-text-editor': [{
+'atom-workspace':
   'ctrl-alt-m': 'duplicate-and-comment:duplicateAndComment'
-}]
