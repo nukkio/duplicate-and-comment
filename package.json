@@ -1,7 +1,7 @@
 {
   "name": "duplicate-and-comment",
   "main": "./lib/duplicate-and-comment",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Duplicate the selected lines and comment the original",
   "activationCommands": {
     "atom-text-editor": [
